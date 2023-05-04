@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-04T16:53:50.724Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68" etag="dM_nSSAJoH8lL8iyzDlb" version="21.2.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-05-04T17:14:01.946Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68" etag="rRUwghx6yk7aJQOVENrv" version="21.2.8" type="device">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="828" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -84,6 +84,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tjRm9xzkeBWZtNg0guCN-20" target="tjRm9xzkeBWZtNg0guCN-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="tjRm9xzkeBWZtNg0guCN-20" value="Ulei motor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="490" y="90" width="90" height="20" as="geometry" />
         </mxCell>
@@ -127,6 +130,27 @@
               <mxPoint x="450" y="190" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-31" value="Ulei motor&lt;br&gt;Stoc: xx qty&lt;br&gt;Pret: xx lei&lt;br&gt;Detalii scurte de utilizare:&lt;br&gt;- Se pune in motor diesel!&lt;br&gt;- NU SE BEA!" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="30" width="170" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tjRm9xzkeBWZtNg0guCN-37" target="tjRm9xzkeBWZtNg0guCN-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-37" value="Rezerva" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="150" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tjRm9xzkeBWZtNg0guCN-38" target="tjRm9xzkeBWZtNg0guCN-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-38" value="Buy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="150" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-39" value="TBD" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="180" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tjRm9xzkeBWZtNg0guCN-41" value="CARD" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="180" width="50" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
