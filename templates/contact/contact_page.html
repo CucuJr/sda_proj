@@ -2,4 +2,61 @@
 {% block title %} Contact {% endblock %}
 {% block content %}
 
+    <p style="font-size: 30px; text-align: center; font-family: Arial"><b>People of contact</b></p>
+    <br/><br/><br/>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for person in contacts %}
+                <div class="col-md-3">
+                    <div class="card" style="border-radius: 10px; margin: 20px">
+
+                        {% if person.functia == "Manager" %}
+                            <a href="{% url "manager-details" %}">
+                            <img src="https://www.366icons.com/media/01/profile-avatar-account-icon-16699.png" style="width: 250px" class="card-img-top" alt="...">
+                            </a>
+
+                        {% elif person.functia == "Secretara" %}
+                            <a href="{% url "secretara-details" %}">
+                            <img src="https://th.bing.com/th/id/OIP.u1ydLvhqyGYELoat-wKFXQHaHa?pid=ImgDet&rs=1" style="width: 250px" class="card-img-top" alt="...">
+                            </a>
+
+                        {% elif person.functia == "Tehnician" %}
+                            <a href="{% url "tehnician-details" %}">
+                            <img src="https://th.bing.com/th/id/OIP.wh7RjeQZxTQAWMul-2xpIgHaH0?w=178&h=188&c=7&r=0&o=5&pid=1.7" style="width: 240px" class="card-img-top" alt="...">
+                            </a>
+                        {% elif person.functia == "Casier" %}
+                            <a href="{% url "casier-details" %}">
+                            <img src="https://th.bing.com/th/id/OIP.-mIkfr91_qMeBVx53_rZ2QHaHa?w=200&h=200&c=7&r=0&o=5&pid=1.7" style="width: 250px" class="card-img-top" alt="...">
+                            </a>
+                        {% endif %}
+
+                    <div class="card-body" style="background-color: lightblue">
+                    <h5 class="card-title"> <b>{{ person.nume }}</b> {{ person.prenume }}</h5>
+                      <p class="card-text">Functia: <b>{{ person.functia }}</b><br/>
+                        Email: {{ person.email }}<br/>
+                        Telefon: {{ person.tel }}</p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            Contact via
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                   href="">Email</a></li>
+                            <li><a class="dropdown-item"
+                                   href="">Telefon</a></li>
+                            <li><a class="dropdown-item"
+                                   href="">Mesaj privat</a></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+    <a href="{% url "homepage" %}" class="btn btn-primary" style="margin-left: 30px" > Go to homepage </a>
 {% endblock %}

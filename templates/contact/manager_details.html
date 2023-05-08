@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Details manager {% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for manager in manager_details %}
+            <div class="col-md-6 offset-md-3">
+                <br>
+                <div class="card text-center">
+                    <div class="card-header">
+                        Manager details
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"> Fondatorul firmei SC LaCucu SRL </h5>
+                        <p class="card-text" style="font-size: 30px"> <b>{{ manager.nume }}</b> {{ manager.prenume }}</p>
+                        <p class="card-text"> Telefon: {{ manager.tel }} </p>
+                        <p class="card-text"> Email: {{ manager.email }}</p>
+
+                        <a href="{% url "contacts" %}" class="btn btn-primary" style="margin-left: 30px" > Go to contacts </a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
