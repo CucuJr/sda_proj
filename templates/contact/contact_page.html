@@ -36,10 +36,12 @@
                       <p class="card-text">Functia: <b>{{ person.functia }}</b><br/>
                         Email: {{ person.email }}<br/>
                         Telefon: {{ person.tel }}</p>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button"
+
+
+                    <div class="button">
+                        <button class="btn btn-primary" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                            Contact via
+                            Contact
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
@@ -51,7 +53,6 @@
                         </ul>
                     </div>
                   </div>
-
                 </div>
             </div>
         {% endfor %}
