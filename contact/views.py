@@ -99,3 +99,6 @@ def casier_details(request):
         ]
     }
     return render(request, "contact/casier_details.html", casier)
+
+class ContactTemplateView(TemplateView):
+    template_name = 'contact/contact_button.html'

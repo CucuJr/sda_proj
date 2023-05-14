@@ -25,6 +25,7 @@
                             <a href="{% url "tehnician-details" %}">
                             <img src="https://th.bing.com/th/id/OIP.wh7RjeQZxTQAWMul-2xpIgHaH0?w=178&h=188&c=7&r=0&o=5&pid=1.7" style="width: 240px" class="card-img-top" alt="...">
                             </a>
+
                         {% elif person.functia == "Casier" %}
                             <a href="{% url "casier-details" %}">
                             <img src="https://th.bing.com/th/id/OIP.-mIkfr91_qMeBVx53_rZ2QHaHa?w=200&h=200&c=7&r=0&o=5&pid=1.7" style="width: 250px" class="card-img-top" alt="...">
@@ -36,28 +37,90 @@
                       <p class="card-text">Functia: <b>{{ person.functia }}</b><br/>
                         Email: {{ person.email }}<br/>
                         Telefon: {{ person.tel }}</p>
-
-
-                    <div class="button">
-                        <button class="btn btn-primary" type="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                            Contact
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                   href="">Email</a></li>
-                            <li><a class="dropdown-item"
-                                   href="">Telefon</a></li>
-                            <li><a class="dropdown-item"
-                                   href="">Mesaj privat</a></li>
-                        </ul>
                     </div>
-                  </div>
+
                 </div>
             </div>
+
         {% endfor %}
+
         </div>
     </div>
+    <br/><br/><br/>
+{#    <a href="{% url "contact-button" %}" class="btn btn-primary" > Contacteaza-ne! </a>#}
+{#    <a href="{% url "homepage" %}" class="btn btn-primary" style="margin-left: 30px" > Go to homepage </a>#}
 
-    <a href="{% url "homepage" %}" class="btn btn-primary" style="margin-left: 30px" > Go to homepage </a>
+    <div class="container-fluid px-4 pxlg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class=" col-lg-8 col-xl-6 text-center">
+                <h2 class="mt-0">Contacteaza-ne!</h2>
+                <hr class="divider">
+                <p class="text-muted mb-5" style="font-size: 18px">Cu ce te putem ajuta? Ai nevoie de ceva specific? Scrie-ne si te contactam cat de repede posibil!</p>
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                    <!-- Name input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control is-invalid" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="name">Numele si prenumele</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Este necesar sa scrieti un nume.</div>
+                    </div>
+
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" data-sb-can-submit="no">
+                        <label for="email">Adresa de email</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">Este necesara o adresa de email.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email-ul nu este valid.</div>
+                    </div>
+
+                    <!-- Phone number input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="tel" placeholder="0744 520 261" data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="phone">Numar de teleon</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">Este necesar un numar de telefon.</div>
+                    </div>
+
+                    <!-- Message input-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
+                        <label for="message">Mesajul dumneavoastra</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Este necesar un mesaj.</div>
+                    </div>
+
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+
+                    <!-- Submit Button-->
+                    <div class="d-grid">
+                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
+                    </div>
+
+                    <br/>
+                    <div class="d-grid">
+                    <a href="{% url "homepage" %}" class="btn btn-primary" > Anuleaza si intoarcete la prima pagina </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 {% endblock %}
