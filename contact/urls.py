@@ -10,4 +10,6 @@ urlpatterns = [
     path("tehnician_details/", views.tehnician_details, name="tehnician-details"),
     path("casier_details/", views.casier_details, name="casier-details"),
     path("contact_button/", views.ContactTemplateView.as_view(), name="contact-button"),
+    path("mesaj/", views.InregistrareMesaj.as_view(), name="inregistrare-mesaj"),
+
 ]

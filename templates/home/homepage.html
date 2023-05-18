@@ -1,5 +1,60 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} Home {% endblock %}
 {% block content %}
+    <br/><br/><br/>
+    <p style="font-size: 50px; color: white; text-align: center; font-family: Arial"><b>Categoriile de produse</b></p>
+
+    <div class="container-fluid">
+        <div class="row">
+           <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card" style="width:450px; border-radius: 10px; margin: 20px; background-color: lightblue; text-align: center">
+                      <div class="card-body">
+                          <a href="{#% url "categorii/petroliere.html" %#}">
+                            <img src="https://th.bing.com/th/id/R.c88d3e2c59c76542148076e0d1720600?rik=E4bneO4BXWawNw&pid=ImgRaw&r=0" style="height:250px; width: 250px;">
+                          </a>
+                          <h3 class="card-title" style="text-align: center">Petroliere</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="col-sm-3">
+                        <div class="card" style="width:450px; border-radius: 10px; margin: 20px; background-color: lightblue; text-align: center">
+                          <div class="card-body">
+                              <a href="">
+                                <img src="https://th.bing.com/th/id/OIP.wr8z_YUEKzoBe8xRAT666QHaE8?pid=ImgDet&rs=1" style="height:250px; width: 250px;">
+                              </a>
+                              <h3 class="card-title" style="text-align: center">Curatenie</h3>
+                          </div>
+                        </div>
+                      </div>
+
+                    <div class="col-sm-3">
+                        <div class="card" style="width:450px; border-radius: 10px; margin: 20px; background-color: lightblue; text-align: center">
+                          <div class="card-body">
+                              <a href="">
+                                <img src="{% static 'img/consumabile.png' %}" style="height:250px; width: 250px;">
+                              </a>
+                              <h3 class="card-title" style="text-align: center">Consumabile</h3>
+                          </div>
+                        </div>
+                      </div>
+
+                     <div class="col-sm-3">
+                        <div class="card" style="width:450px; border-radius: 10px; margin: 20px; background-color: lightblue; text-align: center">
+                          <div class="card-body">
+                              <a href="">
+                                <img src="https://media.istockphoto.com/id/1375716890/vector/same-day-delivery-icon-vector-for-graphic-design-logo-website-social-media-mobile-app-ui.jpg?s=612x612&w=0&k=20&c=f0tCmdUgj9Fq0pC1Ni9V6v6Jp0LV0UdrKXSUOUd-0gs=" style="height:250px; width: 250px;">
+                              </a>
+                              <h3 class="card-title" style="text-align: center">La comanda</h3>
+                          </div>
+                        </div>
+                      </div>
+
+            </div>
+        </div>
+    </div>
+
+
 
 {% endblock %}

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %} Contact {% endblock %}
 {% block content %}
+    <br/>
 
-    <p style="font-size: 30px; text-align: center; font-family: Arial"><b>People of contact</b></p>
-    <br/><br/><br/>
+    <p style="font-size: 30px; color: white; text-align: center; font-family: Arial"><b>Persoane de contact</b></p>
 
     <div class="container-fluid">
         <div class="row">
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-        {% endfor %}
+            {% endfor %}
 
         </div>
     </div>
@@ -50,44 +50,47 @@
 {#    <a href="{% url "contact-button" %}" class="btn btn-primary" > Contacteaza-ne! </a>#}
 {#    <a href="{% url "homepage" %}" class="btn btn-primary" style="margin-left: 30px" > Go to homepage </a>#}
 
-    <div class="container-fluid px-4 pxlg-5">
+    <div class="container-fluid px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class=" col-lg-8 col-xl-6 text-center">
+            <div class=" card col-lg-6 col-xl-6 text-center">
                 <h2 class="mt-0">Contacteaza-ne!</h2>
                 <hr class="divider">
                 <p class="text-muted mb-5" style="font-size: 18px">Cu ce te putem ajuta? Ai nevoie de ceva specific? Scrie-ne si te contactam cat de repede posibil!</p>
             </div>
+
         </div>
+         <br/>
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-
+                    {% csrf_token %}
+{#                    {{ form.as_p }} {# -pt a vizualiza fieldurile standard #}
                     <!-- Name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control is-invalid" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
-                        <label for="name">Numele si prenumele</label>
+                        <input class="form-control is-invalid" id="{{ form.id.full_nume }}" name="{{ form.full_nume }}" value="{{ form.full_nume }}" type="text" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="{{ form.name.full_nume }}">Numele si prenumele</label>
                         <div class="invalid-feedback" data-sb-feedback="name:required">Este necesar sa scrieti un nume.</div>
                     </div>
 
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" data-sb-can-submit="no">
-                        <label for="email">Adresa de email</label>
+                        <input class="form-control" id="{{ form.id_email }}" name="{{ form.email }}" value="{{ form.email }}" type="email" placeholder="name@example.com" data-sb-validations="required,email" data-sb-can-submit="no">
+                        <label for="{{ form.name.email}}">Adresa de email</label>
                         <div class="invalid-feedback" data-sb-feedback="email:required">Este necesara o adresa de email.</div>
                         <div class="invalid-feedback" data-sb-feedback="email:email">Email-ul nu este valid.</div>
                     </div>
 
                     <!-- Phone number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="0744 520 261" data-sb-validations="required" data-sb-can-submit="no">
-                        <label for="phone">Numar de teleon</label>
+                        <input class="form-control" id="{{ form.id_telefon }}" name="{{ form.telefon }}" value="{{ form.telefon }}" type="tel" placeholder="0744 520 261" data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="{{ form.name.telefon }}">Numar de telefon</label>
                         <div class="invalid-feedback" data-sb-feedback="phone:required">Este necesar un numar de telefon.</div>
                     </div>
 
                     <!-- Message input-->
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
-                        <label for="message">Mesajul dumneavoastra</label>
+                        <textarea class="form-control" id="{{ form.id_mesaj }}" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
+                        <label for="{{ form.name.mesaj }}">Mesajul dumneavoastra</label>
                         <div class="invalid-feedback" data-sb-feedback="message:required">Este necesar un mesaj.</div>
                     </div>
 
@@ -112,7 +115,7 @@
 
                     <!-- Submit Button-->
                     <div class="d-grid">
-                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
+                        <div class="d-grid"><button class="btn btn-primary" id="submitButton" type="submit" value="Submit">Submit</button></div>
                     </div>
 
                     <br/>
@@ -122,5 +125,6 @@
                 </form>
             </div>
         </div>
+
 
 {% endblock %}

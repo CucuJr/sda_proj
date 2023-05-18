@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView
-
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, CreateView
+from .models import Mesaj
 
 def contact_page(request):
     return HttpResponse("Hello Lumee!!")
@@ -102,3 +103,14 @@ def casier_details(request):
 
 class ContactTemplateView(TemplateView):
     template_name = 'contact/contact_button.html'
+
+
+class InregistrareMesaj(CreateView):
+    template_name = "contact/contact_page.html"
+    model = Mesaj
+    fields = "__all__"
+    success_url =reverse_lazy("homepage")
+
+    def form_valid(self, form):
+        pass
+
