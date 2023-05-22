@@ -1,13 +1,13 @@
 {% extends "base.html" %}
-{% block title %} List of produse petroliere {% endblock %}
+{% block title %} List of produse pt curatenie {% endblock %}
 {% block content %}
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
 
-            {% if all_ppetroliere %}
-                <table class="table" style="color: white">
+            {% if all_pcuratenie %}
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Denumire</th>
@@ -21,14 +21,14 @@
                     </thead>
 
                     <tbody>
-                        {% for ppetrolier in all_ppetroliere %}
+                        {% for pcuratenie in all_pcuratenie %}
                             <tr>
-                                <td>{{ ppetrolier.denumire }}</td>
-                                <td>{{ ppetrolier.brand }}</td>
-                                <td>{{ ppetrolier.model }}</td>
-                                <td>{{ ppetrolier.informatii }}</td>
-                                <td>{{ ppetrolier.tipul }}</td>
-                                <td>{{ ppetrolier.profil }}</td>
+                                <td>{{ pcuratenie.denumire }}</td>
+                                <td>{{ pcuratenie.brand }}</td>
+                                <td>{{ pcuratenie.model }}</td>
+                                <td>{{ pcuratenie.informatii }}</td>
+                                <td>{{ pcuratenie.tipul }}</td>
+                                <td>{{ pcuratenie.profil }}</td>
                                 <td>
                                     <button type="button" class="btn btn-success">Buy</button>
                                 </td>
