@@ -3,4 +3,4 @@ from django.views.generic import TemplateView, CreateView
 
 
 class CategoriiTemplateView(TemplateView):
-    template_name = 'categorii/petroliere.html'
+    template_name = 'categorii/create_ppetroliere.html'
